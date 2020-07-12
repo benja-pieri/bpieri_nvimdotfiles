@@ -42,9 +42,16 @@ call plug#end()
 " ======= airline settings =======
 
 "airline settings lines
-let g:airline_theme='minimalist'
+let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 set guifont=hack_regular:h12
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
 
 
 " ======= nerdtree settings =======
@@ -54,6 +61,9 @@ autocmd vimenter * NERDTree
 
 "close vim when only nerdtree is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"shortcut to open nerdtree
+map <C-n> :NERDTreeToggle<CR>
 
 
 " ======= gruvbox settings =======
@@ -74,11 +84,10 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 let g:coc_snippet_next = '<tab>'
 
-
 " ======= general settings =======
+let mapleader="\<space>" 
 set rnu
 set nu
 set inccommand=split
@@ -96,4 +105,8 @@ set incsearch
 set expandtab
 set noswapfile
 set encoding=UTF-8
-
+set noshowmode
+set showtabline=2
+"remap pgup and pgdn to switch between the open buffers
+nnoremap <PageUp>   :bprevious<CR>
+nnoremap <PageDown> :bnext<CR>
