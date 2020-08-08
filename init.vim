@@ -36,6 +36,10 @@ Plug 'preservim/nerdtree'
 "git plug for Nerd Tree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+"ident lines
+Plug 'Yggdroot/indentLine'
+
+
 call plug#end()
 
 
@@ -73,7 +77,8 @@ set background=dark
 
 " ======= coc settings =======
 
-"Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
+"Make <tab> used for trigger completion, completion confirm,
+"snippet expand and jump like VSCode.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -85,6 +90,12 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 let g:coc_snippet_next = '<tab>'
+
+
+" ======= indent_line settings =======
+let g:indentLine_char_list = ['▏', '|', '¦', '┆', '┊']
+
+
 
 " ======= general settings =======
 let mapleader="\<space>" 
@@ -107,6 +118,11 @@ set noswapfile
 set encoding=UTF-8
 set noshowmode
 set showtabline=2
+
 "remap pgup and pgdn to switch between the open buffers
 nnoremap <PageUp>   :bprevious<CR>
 nnoremap <PageDown> :bnext<CR>
+
+"set a colorcolumn to highlight the 80' caracter
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
