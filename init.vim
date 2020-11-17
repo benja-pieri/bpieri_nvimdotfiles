@@ -19,16 +19,13 @@ Plug 'w0rp/ale'
 Plug 'cohama/lexima.vim'
 
 "colorscheme for vim
-Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 "coc extension
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "fugitive is the premier Vim plugin for Git
 Plug 'tpope/vim-fugitive'
-
-"icons for vim
-Plug 'ryanoasis/vim-devicons'
 
 "nerd Tree
 Plug 'preservim/nerdtree'
@@ -39,14 +36,13 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 "ident lines
 Plug 'Yggdroot/indentLine'
 
-
 call plug#end()
 
 
 " ======= airline settings =======
 
 "airline settings lines
-let g:airline_solarized_bg='dark'
+let g:airline_solarized_bg='nord'
 let g:airline_powerline_fonts = 1
 set guifont=hack_regular:h12
 
@@ -55,7 +51,6 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#right_sep = ''
 let g:airline#extensions#tabline#right_alt_sep = ''
-
 
 
 " ======= nerdtree settings =======
@@ -71,7 +66,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 
 " ======= gruvbox settings =======
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 
 
@@ -94,7 +89,6 @@ let g:coc_snippet_next = '<tab>'
 
 " ======= indent_line settings =======
 let g:indentLine_char_list = ['▏', '|', '¦', '┆', '┊']
-
 
 
 " ======= general settings =======
